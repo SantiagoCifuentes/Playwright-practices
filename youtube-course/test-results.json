@@ -90,13 +90,13 @@
   },
   "suites": [
     {
-      "title": "Chapter 4\\07_checkBox_radioButton.spec.ts",
-      "file": "Chapter 4/07_checkBox_radioButton.spec.ts",
+      "title": "Chapter5\\03_dataDrivenTestinCSV.spec.ts",
+      "file": "Chapter5/03_dataDrivenTestinCSV.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "checkbox and radio button",
+          "title": "Data Driven Testing Using CSV Files - Testing",
           "ok": true,
           "tags": [],
           "tests": [
@@ -108,15 +108,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 15,
+                  "workerIndex": 2,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1273,
+                  "duration": 746,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-01-15T22:28:10.440Z",
+                  "startTime": "2026-01-19T23:32:37.235Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -124,19 +124,53 @@
               "status": "expected"
             }
           ],
-          "id": "58c067e3d3ff16368cec-1e4db6b2e99580581025",
-          "file": "Chapter 4/07_checkBox_radioButton.spec.ts",
-          "line": 3,
-          "column": 5
+          "id": "5e344483c9e9ee9efb8e-d7edcf7fa207a9442d6e",
+          "file": "Chapter5/03_dataDrivenTestinCSV.spec.ts",
+          "line": 21,
+          "column": 9
+        },
+        {
+          "title": "Data Driven Testing Using CSV Files - Bugs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 670,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-01-19T23:32:38.121Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5e344483c9e9ee9efb8e-a8a5b4ac75425b947938",
+          "file": "Chapter5/03_dataDrivenTestinCSV.spec.ts",
+          "line": 21,
+          "column": 9
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-01-15T22:28:09.534Z",
-    "duration": 2220.1419999999925,
-    "expected": 1,
+    "startTime": "2026-01-19T23:32:36.333Z",
+    "duration": 2480.9890000000596,
+    "expected": 2,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

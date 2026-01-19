@@ -1,0 +1,10 @@
+{
+    "TestDataSet1": {
+        "username": "testuser1",
+        "password": "password123"
+    },
+    "TestDataSet2": {
+        "username": "testuser2",
+        "password": "password456"
+    }
+}
