@@ -90,13 +90,13 @@
   },
   "suites": [
     {
-      "title": "Chapter5\\03_dataDrivenTestinCSV.spec.ts",
-      "file": "Chapter5/03_dataDrivenTestinCSV.spec.ts",
+      "title": "Chapter5\\04_dataDrivenTestingEXCEL.spec.ts",
+      "file": "Chapter5/04_dataDrivenTestingEXCEL.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Data Driven Testing Using CSV Files - Testing",
+          "title": "Data Driven Testing Using EXCEL Files - Testing",
           "ok": true,
           "tags": [],
           "tests": [
@@ -108,15 +108,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 2,
+                  "workerIndex": 27,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 746,
+                  "duration": 729,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-01-19T23:32:37.235Z",
+                  "startTime": "2026-01-20T22:15:01.054Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -124,13 +124,13 @@
               "status": "expected"
             }
           ],
-          "id": "5e344483c9e9ee9efb8e-d7edcf7fa207a9442d6e",
-          "file": "Chapter5/03_dataDrivenTestinCSV.spec.ts",
-          "line": 21,
+          "id": "adcec5e893090dba2366-d7aa48be227b4a478ae2",
+          "file": "Chapter5/04_dataDrivenTestingEXCEL.spec.ts",
+          "line": 18,
           "column": 9
         },
         {
-          "title": "Data Driven Testing Using CSV Files - Bugs",
+          "title": "Data Driven Testing Using EXCEL Files - Hard Skills",
           "ok": true,
           "tags": [],
           "tests": [
@@ -142,15 +142,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 2,
+                  "workerIndex": 27,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 670,
+                  "duration": 627,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-01-19T23:32:38.121Z",
+                  "startTime": "2026-01-20T22:15:01.929Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -158,9 +158,9 @@
               "status": "expected"
             }
           ],
-          "id": "5e344483c9e9ee9efb8e-a8a5b4ac75425b947938",
-          "file": "Chapter5/03_dataDrivenTestinCSV.spec.ts",
-          "line": 21,
+          "id": "adcec5e893090dba2366-406fafe54db494241503",
+          "file": "Chapter5/04_dataDrivenTestingEXCEL.spec.ts",
+          "line": 18,
           "column": 9
         }
       ]
@@ -168,8 +168,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-01-19T23:32:36.333Z",
-    "duration": 2480.9890000000596,
+    "startTime": "2026-01-20T22:14:59.893Z",
+    "duration": 2718.9759999997914,
     "expected": 2,
     "skipped": 0,
     "unexpected": 0,
