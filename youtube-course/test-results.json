@@ -90,13 +90,13 @@
   },
   "suites": [
     {
-      "title": "Chapter5\\04_dataDrivenTestingEXCEL.spec.ts",
-      "file": "Chapter5/04_dataDrivenTestingEXCEL.spec.ts",
+      "title": "Chapter5\\05_pageObjectModel.spec.ts",
+      "file": "Chapter5/05_pageObjectModel.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Data Driven Testing Using EXCEL Files - Testing",
+          "title": "Page object model",
           "ok": true,
           "tags": [],
           "tests": [
@@ -108,15 +108,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 27,
+                  "workerIndex": 5,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 729,
+                  "duration": 5878,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-01-20T22:15:01.054Z",
+                  "startTime": "2026-01-21T19:00:07.837Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -124,53 +124,19 @@
               "status": "expected"
             }
           ],
-          "id": "adcec5e893090dba2366-d7aa48be227b4a478ae2",
-          "file": "Chapter5/04_dataDrivenTestingEXCEL.spec.ts",
-          "line": 18,
-          "column": 9
-        },
-        {
-          "title": "Data Driven Testing Using EXCEL Files - Hard Skills",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 27,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 627,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-01-20T22:15:01.929Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "adcec5e893090dba2366-406fafe54db494241503",
-          "file": "Chapter5/04_dataDrivenTestingEXCEL.spec.ts",
-          "line": 18,
-          "column": 9
+          "id": "8a1983d4766d5b57f52b-697d4b2a690305ef1dee",
+          "file": "Chapter5/05_pageObjectModel.spec.ts",
+          "line": 7,
+          "column": 5
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-01-20T22:14:59.893Z",
-    "duration": 2718.9759999997914,
-    "expected": 2,
+    "startTime": "2026-01-21T19:00:06.930Z",
+    "duration": 6828.949999999721,
+    "expected": 1,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
