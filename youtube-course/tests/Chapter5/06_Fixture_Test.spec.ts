@@ -1,10 +1,12 @@
-import { test, expect } from '@playwright/test'
+import { test } from '../../src/fixture/TestFixture';
 import { HomePage } from '../../src/pages/HomePage';
 import { PlaylistPage } from '../../src/pages/PlaylistPage';
 import { ResultPage } from '../../src/pages/ResultPage';
 import 'dotenv/config';
 
-test('Page object model', async ({ page }) => {
+test('Fixture', async ({ page }) => {
+
+    console.log('Test is starting...');
 
     //create objects of the pages
     const homePage = new HomePage(page);
@@ -30,6 +32,7 @@ test('Page object model', async ({ page }) => {
      await playlistPage.validatePageTitle('#1 Playwright Tutorial Full Course 2025 | Playwright Testing Tutorial - YouTube');
 
 
+    console.log('Test has completed.');
 
 
 });
