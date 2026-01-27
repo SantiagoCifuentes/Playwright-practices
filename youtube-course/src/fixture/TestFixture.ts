@@ -2,6 +2,8 @@ import { test as base } from '@playwright/test';
 import { HomePage } from '../pages/HomePage';
 import { ResultPage } from '../pages/ResultPage';
 import { PlaylistPage } from '../pages/PlaylistPage';
+import { TestData } from '../interface/Module1TestData.interface';
+import { loadTestData } from '../utils/JsonHelper';
 
 
 
@@ -11,6 +13,7 @@ export const test = base.extend<{
     homePage: HomePage;
     resultPage: ResultPage;
     playlistPage: PlaylistPage;
+    testData: TestData;
 }>
 
     ({
@@ -35,6 +38,10 @@ export const test = base.extend<{
             const playlistPage = new PlaylistPage(page);
             await use(playlistPage);
         },
+        testData: async ({ }, use) => {
+            const data = await loadTestData();
+            await use(data);
+        }
 
     });
 

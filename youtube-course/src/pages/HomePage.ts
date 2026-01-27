@@ -18,8 +18,14 @@ export class HomePage {
 
     //methods
     async goToUrl() {
-        await this.page.goto(`${process.env.YOUTUBE_URL}`);
-
+        if (process.env.TEST_EXECUTION_MODE === 'qa') {
+            await this.page.goto(`${process.env.YOUTUBE_URL}`);
+            console.log('Navigated to QA environment');
+        }
+        else if (process.env.TEST_EXECUTION_MODE === 'dev') {
+            await this.page.goto(`${process.env.YOUTUBE_URL}`);
+            console.log('Navigated to DEV environment');
+        }
     }
 
     // async fillSearch(keyword: string) {
