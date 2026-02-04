@@ -90,13 +90,13 @@
   },
   "suites": [
     {
-      "title": "Chapter5\\08_RunTestBasedOnEnv.spec.ts",
-      "file": "Chapter5/08_RunTestBasedOnEnv.spec.ts",
+      "title": "Chapter6\\04_POST_API_TYPESAFETY.spec.ts",
+      "file": "Chapter6/04_POST_API_TYPESAFETY.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Fixture",
+          "title": "Creating POST API  using dynamic Request  and faker dependencie",
           "ok": true,
           "tags": [],
           "tests": [
@@ -108,37 +108,19 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 2,
+                  "workerIndex": 7,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5155,
+                  "duration": 354,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "Global before is running...\n"
-                    },
-                    {
-                      "text": "Test is starting...\n"
-                    },
-                    {
-                      "text": "Navigated to QA environment\n"
-                    },
-                    {
-                      "text": "Skill 1 is:  Playwright by Testers Talk ✅\n"
-                    },
-                    {
-                      "text": "Skill 2 is:  TS\n"
-                    },
-                    {
-                      "text": "Skill 3 is:  Python\n"
-                    },
-                    {
-                      "text": "Global afterEach is running...\n"
+                      "text": "POST API Response is:  {\n  bookingid: \u001b[33m3735\u001b[39m,\n  booking: {\n    firstname: \u001b[32m'Maynard'\u001b[39m,\n    lastname: \u001b[32m'Hermann'\u001b[39m,\n    totalprice: \u001b[33m668\u001b[39m,\n    depositpaid: \u001b[33mtrue\u001b[39m,\n    bookingdates: { checkin: \u001b[32m'2026-03-02'\u001b[39m, checkout: \u001b[32m'2026-06-01'\u001b[39m },\n    additionalneeds: \u001b[32m'super bowls'\u001b[39m\n  }\n}\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-01-26T17:23:45.071Z",
+                  "startTime": "2026-02-04T22:08:19.183Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -146,9 +128,9 @@
               "status": "expected"
             }
           ],
-          "id": "e11bf8ebee1a008d67ac-0688c6baf27216107b2c",
-          "file": "Chapter5/08_RunTestBasedOnEnv.spec.ts",
-          "line": 7,
+          "id": "63c3c53cc6bc928d5b9f-52e561309a07f3dc2fd4",
+          "file": "Chapter6/04_POST_API_TYPESAFETY.spec.ts",
+          "line": 13,
           "column": 5
         }
       ]
@@ -156,8 +138,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-01-26T17:23:44.044Z",
-    "duration": 6228.052000001073,
+    "startTime": "2026-02-04T22:08:17.903Z",
+    "duration": 1655.6189999990165,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,
