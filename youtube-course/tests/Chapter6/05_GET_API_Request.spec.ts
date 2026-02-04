@@ -61,6 +61,14 @@ test('Creating POST API  using dynamic Request  and faker dependencie', async ({
     expect(jsonResponse.bookingid % 1).toBe(0); // to check if it's an integer
     expect(jsonResponse.booking.firstname).toBe(firstName);// data means where we are sending the request body
 
+    //get api request
+
+    const getResponse = jsonResponse.bookingid;
+
+    console.log('booking id : ', getResponse);
+
+    const getAPIResponse = await request.get(`/booking/${getResponse}`);
+
  
 
 });
