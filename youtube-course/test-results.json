@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "C:\\Playwright}\\Playwright-practices\\youtube-course\\playwright.config.ts",
-    "rootDir": "C:/Playwright}/Playwright-practices/youtube-course/tests",
+    "configFile": "C:\\Playwright\\Playwright-practices\\youtube-course\\playwright.config.ts",
+    "rootDir": "C:/Playwright/Playwright-practices/youtube-course/tests",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -33,7 +33,7 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "C:/Playwright}/Playwright-practices/youtube-course/test-results",
+        "outputDir": "C:/Playwright/Playwright-practices/youtube-course/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -41,7 +41,7 @@
         },
         "id": "chromium",
         "name": "chromium",
-        "testDir": "C:/Playwright}/Playwright-practices/youtube-course/tests",
+        "testDir": "C:/Playwright/Playwright-practices/youtube-course/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -49,7 +49,7 @@
         "timeout": 30000
       },
       {
-        "outputDir": "C:/Playwright}/Playwright-practices/youtube-course/test-results",
+        "outputDir": "C:/Playwright/Playwright-practices/youtube-course/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -57,7 +57,7 @@
         },
         "id": "firefox",
         "name": "firefox",
-        "testDir": "C:/Playwright}/Playwright-practices/youtube-course/tests",
+        "testDir": "C:/Playwright/Playwright-practices/youtube-course/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -65,7 +65,7 @@
         "timeout": 30000
       },
       {
-        "outputDir": "C:/Playwright}/Playwright-practices/youtube-course/test-results",
+        "outputDir": "C:/Playwright/Playwright-practices/youtube-course/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -73,7 +73,7 @@
         },
         "id": "webkit",
         "name": "webkit",
-        "testDir": "C:/Playwright}/Playwright-practices/youtube-course/tests",
+        "testDir": "C:/Playwright/Playwright-practices/youtube-course/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -90,13 +90,13 @@
   },
   "suites": [
     {
-      "title": "Chapter6\\05_GET_API_Request.spec.ts",
-      "file": "Chapter6/05_GET_API_Request.spec.ts",
+      "title": "Chapter6\\08_PATCH_API_REQUEST.spec.ts",
+      "file": "Chapter6/08_PATCH_API_REQUEST.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Creating GET API  using dynamic Request  and faker dependencie",
+          "title": "Create PUT API ",
           "ok": true,
           "tags": [],
           "tests": [
@@ -108,25 +108,31 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 10,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1074,
+                  "duration": 654,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "POST API Response is:  {\n  bookingid: \u001b[33m2829\u001b[39m,\n  booking: {\n    firstname: \u001b[32m'June'\u001b[39m,\n    lastname: \u001b[32m'Braun'\u001b[39m,\n    totalprice: \u001b[33m671\u001b[39m,\n    depositpaid: \u001b[33mtrue\u001b[39m,\n    bookingdates: { checkin: \u001b[32m'2026-03-02'\u001b[39m, checkout: \u001b[32m'2026-06-01'\u001b[39m },\n    additionalneeds: \u001b[32m'super bowls'\u001b[39m\n  }\n}\n"
+                      "text": "POST API Response is:  {\n  bookingid: \u001b[33m3623\u001b[39m,\n  booking: {\n    firstname: \u001b[32m'Susanna'\u001b[39m,\n    lastname: \u001b[32m'Keebler'\u001b[39m,\n    totalprice: \u001b[33m215\u001b[39m,\n    depositpaid: \u001b[33mtrue\u001b[39m,\n    bookingdates: { checkin: \u001b[32m'2026-03-02'\u001b[39m, checkout: \u001b[32m'2026-06-01'\u001b[39m },\n    additionalneeds: \u001b[32m'super bowls'\u001b[39m\n  }\n}\n"
                     },
                     {
-                      "text": "Booking ID for GET Request:  \u001b[33m2829\u001b[39m\n"
+                      "text": "Booking ID for GET Request:  \u001b[33m3623\u001b[39m\n"
                     },
                     {
-                      "text": "GET API Response Body:  {\n  firstname: \u001b[32m'June'\u001b[39m,\n  lastname: \u001b[32m'Braun'\u001b[39m,\n  totalprice: \u001b[33m671\u001b[39m,\n  depositpaid: \u001b[33mtrue\u001b[39m,\n  bookingdates: { checkin: \u001b[32m'2026-03-02'\u001b[39m, checkout: \u001b[32m'2026-06-01'\u001b[39m },\n  additionalneeds: \u001b[32m'super bowls'\u001b[39m\n}\n"
+                      "text": "GET API Response Body:  {\n  firstname: \u001b[32m'Susanna'\u001b[39m,\n  lastname: \u001b[32m'Keebler'\u001b[39m,\n  totalprice: \u001b[33m215\u001b[39m,\n  depositpaid: \u001b[33mtrue\u001b[39m,\n  bookingdates: { checkin: \u001b[32m'2026-03-02'\u001b[39m, checkout: \u001b[32m'2026-06-01'\u001b[39m },\n  additionalneeds: \u001b[32m'super bowls'\u001b[39m\n}\n"
+                    },
+                    {
+                      "text": "Token Response:  { token: \u001b[32m'2438d224075126c'\u001b[39m }\n"
+                    },
+                    {
+                      "text": "PATCH API Response:  {\n  firstname: \u001b[32m'UpdatedFirstName'\u001b[39m,\n  lastname: \u001b[32m'Keebler'\u001b[39m,\n  totalprice: \u001b[33m215\u001b[39m,\n  depositpaid: \u001b[33mtrue\u001b[39m,\n  bookingdates: { checkin: \u001b[32m'2026-03-02'\u001b[39m, checkout: \u001b[32m'2026-06-01'\u001b[39m },\n  additionalneeds: \u001b[32m'Money'\u001b[39m\n}\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-02-05T15:35:57.334Z",
+                  "startTime": "2026-02-05T21:37:37.363Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -134,8 +140,8 @@
               "status": "expected"
             }
           ],
-          "id": "7568c63185dcb68b45f8-3da8e111e879a1323c7e",
-          "file": "Chapter6/05_GET_API_Request.spec.ts",
+          "id": "52125309170cbe174a93-d98a8c5d3b14550bd8bb",
+          "file": "Chapter6/08_PATCH_API_REQUEST.spec.ts",
           "line": 14,
           "column": 5
         }
@@ -144,8 +150,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-05T15:35:52.635Z",
-    "duration": 5828.619000000001,
+    "startTime": "2026-02-05T21:37:32.130Z",
+    "duration": 5945.9399999994785,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

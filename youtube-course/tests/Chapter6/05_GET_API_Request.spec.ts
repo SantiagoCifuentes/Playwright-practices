@@ -2,9 +2,7 @@ import { test, expect } from '@playwright/test';
 import {faker} from '@faker-js/faker';
 import { formatAPIRequest, getRequestBody } from '../../src/utils/APIHelper';
 
-import path from 'path';
-import fs from 'fs';
-import { get } from 'http';
+
 
 test.use({
     baseURL: process.env.API_URL

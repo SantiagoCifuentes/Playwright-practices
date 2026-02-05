@@ -1,10 +1,9 @@
 import { test, expect } from '@playwright/test';
 import { faker } from '@faker-js/faker';
-import { formatAPIRequest, getRequestBody } from '../../src/utils/APIHelper';
-import path from 'path';
-import fs from 'fs';
-import { get } from 'http';
-
+import { getRequestBody } from '../../src/utils/APIHelper';
+import tokenAPIRequest from '../../test-data/api_requests/Token_API_REQUEST.json';
+import putAPIRequest from '../../test-data/api_requests/PUT_API_REQUEST.json';
+import patchAPIRequest from '../../test-data/api_requests/PATCH_API_REQUEST.json';
 
 test.use({
     baseURL: process.env.API_URL
@@ -12,7 +11,7 @@ test.use({
 
 
 
-test('Creating GET API  using query paramaters', async ({ request }) => {
+test('Create PUT API ', async ({ request }) => {
 
     //reading json template file
 
@@ -58,16 +57,12 @@ test('Creating GET API  using query paramaters', async ({ request }) => {
         additionalneeds: 'super bowls'
     });
 
-    expect(jsonResponse.bookingid).toBeGreaterThan(0);
-    expect(typeof jsonResponse.bookingid).toBe('number');
-    expect(jsonResponse.bookingid % 1).toBe(0); // to check if it's an integer
-    expect(jsonResponse.booking.firstname).toBe(firstName);// data means where we are sending the request body
-
+ 
     //GET API Request using query parameters
     const bookingID = jsonResponse.bookingid;
     console.log('Booking ID for GET Request: ', bookingID);
 
-    const getResponse = await request.get(`/booking/`, {
+    const getResponse = await request.get(`/booking/${bookingID}`, {
         params: {
             firstname: firstName,
             lastname: lastName
@@ -81,5 +76,26 @@ test('Creating GET API  using query paramaters', async ({ request }) => {
     console.log('GET API Response Body: ', getResponseBody);
 
 
+    //generate token
+    const tokenResponse = await request.post('/auth', { data: tokenAPIRequest });
+
+    const tokenJson = await tokenResponse.json();
+    console.log('Token Response: ', tokenJson);
+    expect(tokenResponse.status()).toBe(200);
+    expect(tokenResponse.statusText()).toBe('OK');
+
+    //create put api request
+
+    const patchResponse = await request.patch(`/booking/${bookingID}`, {
+        data: patchAPIRequest,
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Cookie": `token=${tokenJson.token}`
+        }
+    });
+     expect(patchResponse.status()).toBe(200);
+    expect(patchResponse.statusText()).toBe('OK');
+    console.log('PATCH API Response: ', await patchResponse.json());
 
 });
