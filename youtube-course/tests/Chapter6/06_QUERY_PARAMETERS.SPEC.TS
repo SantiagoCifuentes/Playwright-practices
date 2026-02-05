@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test';
-import {faker} from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 import { formatAPIRequest, getRequestBody } from '../../src/utils/APIHelper';
-
+import path from 'path';
+import fs from 'fs';
+import { get } from 'http';
 
 
 test.use({
@@ -9,32 +11,33 @@ test.use({
 });
 
 
-test('Creating GET API  using dynamic Request  and faker dependencie', async ({  request }) => {
+
+test('Creating GET API  using query paramaters', async ({ request }) => {
 
     //reading json template file
 
- 
 
-   const firstName = faker.person.firstName();
-   const lastName = faker.person.lastName();
-   const totalprice = faker.number.int({min: 100, max: 1000});
-  
 
-   const requestBody = await getRequestBody(firstName, lastName, totalprice, true, "super bowls", "2026-03-02", "2026-06-01");
-   
+    const firstName = faker.person.firstName();
+    const lastName = faker.person.lastName();
+    const totalprice = faker.number.int({ min: 100, max: 1000 });
+
+
+    const requestBody = await getRequestBody(firstName, lastName, totalprice, true, "super bowls", "2026-03-02", "2026-06-01");
+
 
 
 
     //sending post api request
-    const postResponse = await request.post(`/booking`, {data : requestBody})
-    
+    const postResponse = await request.post(`/booking`, { data: requestBody })
+
     const jsonResponse = await postResponse.json();
     console.log('POST API Response is: ', jsonResponse);
 
     //validating api response status code and status text
     expect(postResponse.status()).toBe(200);
     expect(postResponse.statusText()).toBe('OK');
-    
+
     //validating specific key  or properties 
     expect(jsonResponse.booking).toHaveProperty('firstname', firstName);
     expect(jsonResponse.booking).toHaveProperty('lastname', lastName);
@@ -60,11 +63,16 @@ test('Creating GET API  using dynamic Request  and faker dependencie', async ({ 
     expect(jsonResponse.bookingid % 1).toBe(0); // to check if it's an integer
     expect(jsonResponse.booking.firstname).toBe(firstName);// data means where we are sending the request body
 
-    //GET API Request
+    //GET API Request using query parameters
     const bookingID = jsonResponse.bookingid;
     console.log('Booking ID for GET Request: ', bookingID);
 
-    const getResponse = await request.get(`/booking/${bookingID}`);
+    const getResponse = await request.get(`/booking/`, {
+        params: {
+            firstname: firstName,
+            lastname: lastName
+        }
+    });
 
     //Validate satus code, status text
     expect(getResponse.status()).toBe(200);
@@ -72,6 +80,6 @@ test('Creating GET API  using dynamic Request  and faker dependencie', async ({ 
     const getResponseBody = await getResponse.json();
     console.log('GET API Response Body: ', getResponseBody);
 
- 
+
 
 });

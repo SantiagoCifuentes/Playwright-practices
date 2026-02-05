@@ -1,0 +1,101 @@
+import { test, expect } from '@playwright/test';
+import { faker } from '@faker-js/faker';
+import { getRequestBody } from '../../src/utils/APIHelper';
+import tokenAPIRequest from '../../test-data/api_requests/Token_API_REQUEST.json';
+import putAPIRequest from '../../test-data/api_requests/PUT_API_REQUEST.json';
+import patchAPIRequest from '../../test-data/api_requests/PATCH_API_REQUEST.json';
+
+test.use({
+    baseURL: process.env.API_URL
+});
+
+
+
+test('Create PUT API ', async ({ request }) => {
+
+    //reading json template file
+
+
+
+    const firstName = faker.person.firstName();
+    const lastName = faker.person.lastName();
+    const totalprice = faker.number.int({ min: 100, max: 1000 });
+
+
+    const requestBody = await getRequestBody(firstName, lastName, totalprice, true, "super bowls", "2026-03-02", "2026-06-01");
+
+
+
+
+    //sending post api request
+    const postResponse = await request.post(`/booking`, { data: requestBody })
+
+    const jsonResponse = await postResponse.json();
+    console.log('POST API Response is: ', jsonResponse);
+
+    //validating api response status code and status text
+    expect(postResponse.status()).toBe(200);
+    expect(postResponse.statusText()).toBe('OK');
+
+    //validating specific key  or properties 
+    expect(jsonResponse.booking).toHaveProperty('firstname', firstName);
+    expect(jsonResponse.booking).toHaveProperty('lastname', lastName);
+
+    expect(jsonResponse.booking.bookingdates).toHaveProperty('checkin');
+    expect(jsonResponse.booking.bookingdates).toHaveProperty('checkout');
+
+    //validating the entire response body
+    expect(jsonResponse.booking).toEqual({
+        firstname: firstName,
+        lastname: lastName,
+        totalprice: totalprice,
+        depositpaid: true,
+        bookingdates: {
+            checkin: '2026-03-02',
+            checkout: '2026-06-01'
+        },
+        additionalneeds: 'super bowls'
+    });
+
+ 
+    //GET API Request using query parameters
+    const bookingID = jsonResponse.bookingid;
+    console.log('Booking ID for GET Request: ', bookingID);
+
+    const getResponse = await request.get(`/booking/${bookingID}`, {
+        params: {
+            firstname: firstName,
+            lastname: lastName
+        }
+    });
+
+    //Validate satus code, status text
+    expect(getResponse.status()).toBe(200);
+    expect(getResponse.statusText()).toBe('OK');
+    const getResponseBody = await getResponse.json();
+    console.log('GET API Response Body: ', getResponseBody);
+
+
+    //generate token
+    const tokenResponse = await request.post('/auth', { data: tokenAPIRequest });
+
+    const tokenJson = await tokenResponse.json();
+    console.log('Token Response: ', tokenJson);
+    expect(tokenResponse.status()).toBe(200);
+    expect(tokenResponse.statusText()).toBe('OK');
+
+    //create put api request
+
+    const patchResponse = await request.patch(`/booking/${bookingID}`, {
+        data: patchAPIRequest,
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Cookie": `token=${tokenJson.token}`
+        }
+    });
+     expect(patchResponse.status()).toBe(200);
+    expect(patchResponse.statusText()).toBe('OK');
+    console.log('PATCH API Response: ', await patchResponse.json());
+
+});
