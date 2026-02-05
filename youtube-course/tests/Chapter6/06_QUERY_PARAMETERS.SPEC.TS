@@ -11,7 +11,7 @@ test.use({
 });
 
 
-test('Creating GET API  using dynamic Request  and faker dependencie', async ({  request }) => {
+test('Creating GET API  using query paramaters', async ({  request }) => {
 
     //reading json template file
 
