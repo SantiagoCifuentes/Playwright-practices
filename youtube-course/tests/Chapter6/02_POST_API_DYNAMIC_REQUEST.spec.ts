@@ -22,7 +22,7 @@ test('Creating POST API  using dynamic Request ', async ({  request }) => {
     const formattedRequest = await formatAPIRequest(jsonTemplate, values);
 
     //sending post api request
-    const postResponse = await request.post(`/booking`, {data : JSON.parse(formattedRequest)})
+    const postResponse = await request.post('/booking', {data : JSON.parse(formattedRequest)})
     
     const jsonResponse = await postResponse.json();
     console.log('POST API Response is: ', jsonResponse);
